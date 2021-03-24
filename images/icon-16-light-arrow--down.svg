@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+    <title>icon/16/light/arrow--down</title>
+    <desc>Created with Sketch.</desc>
+    <g id="icon/16/light/arrow--down" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="element/icon/16/dark/arrow--right" transform="translate(8.000000, 8.000000) rotate(-270.000000) translate(-8.000000, -8.000000) translate(4.000000, 1.000000)" stroke="#FFFFFF">
+            <polyline id="Path-2" points="0 -1.35923806e-14 8 6.99460255 0 14"></polyline>
+        </g>
+    </g>
+</svg>

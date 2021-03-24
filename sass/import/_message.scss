@@ -1,0 +1,76 @@
+.message {
+    &-newsletter {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        width: 600px;
+        padding: 50px 100px;
+        background-color: $color-WH;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        z-index: 10000001;
+        .icon-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            width: 40px;
+            height: 40px;
+            padding: 8px;
+            color: $color-secondary;
+            font-size: 1.5rem;
+            line-height: 0;
+            background-color: $color-WH;
+            cursor: pointer;
+            -webkit-transition: color 0.3s, background-color 0.3s;
+            -o-transition: color 0.3s, background-color 0.3s;
+            transition: color 0.3s, background-color 0.3s;
+            &:hover {
+                color: $color-WH;
+                background-color: $color-primary;
+            }
+        }
+        .message-title {
+            font-size: 1.5rem;
+            font-weight: $headings-font-weight;
+            line-height: $headings-line-height;
+            text-align: center;
+        }
+        .message-preface {
+            padding-top: 5px;
+            margin-bottom: 30px;
+            font-size: 1.125rem;
+            font-family: $headings-font-family;
+            font-weight: $font-weight-light;
+            text-align: center;
+            span {
+                display: inline-block;
+            }
+        }
+        form {
+            input {
+                display: block;
+                width: 100%;
+                height: 50px;
+                border: 1px solid $divider-light;
+            }
+            button {
+                display: table;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 30px;
+            }
+        }
+    }
+}
+
+.black {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $color-secondary;
+    opacity: 0.5;
+    z-index: 10000000;
+}

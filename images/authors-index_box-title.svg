@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="152px" height="2px" viewBox="0 0 152 2" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+    <title>border-bottom</title>
+    <desc>Created with Sketch.</desc>
+    <g id="3_專欄作者" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="3-1_全部作者列表" transform="translate(-255.000000, -179.000000)" fill-rule="nonzero">
+            <g id="hightline">
+                <g id="Group-4" transform="translate(123.000000, 144.000000)">
+                    <g id="border-bottom" transform="translate(132.000000, 35.000000)">
+                        <polygon fill="#00151D" points="120 0 152 0 152 2 120 2"></polygon>
+                        <rect id="underline" fill="#FF6600" x="0" y="0" width="120" height="2"></rect>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+    <title>icon/24/dark/member</title>
+    <desc>Created with Sketch.</desc>
+    <g id="icon/24/dark/member" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <circle id="Oval" stroke="#00151D" stroke-width="2" fill-rule="nonzero" cx="11" cy="6" r="5"></circle>
+        <path d="M11,11.0079506 C8.51359642,11.0079506 6.25453396,12.2592291 4.51340602,13.9201145 C2.40425299,15.9320639 1,18.5779875 1,20.5009984 C1,20.9958395 1.10153238,21.3957615 1.33160676,21.7064778 C1.59158832,22.0575839 1.99428516,22.2858725 2.48550549,22.4614606 C4.16476325,23.0617161 6.75766188,23.0177491 9.79294188,23.0032345 C10.1877346,23.0013466 10.5897846,22.9994254 10.9981813,22.9986827 C11.4948139,22.998681 11.9820229,23.0010952 12.4596014,23.0034655 C15.3607335,23.0178645 17.8959636,23.0631397 19.5451949,22.4579916 C20.0236378,22.2824377 20.4176984,22.0537491 20.6725368,21.7040613 C20.898953,21.3933742 21,20.9943821 21,20.5009984 C21,18.5779875 19.595747,15.9320639 17.486594,13.9201145 C15.745466,12.2592291 13.4864036,11.0079506 11,11.0079506 Z" id="Oval-Copy" stroke="#00151D" stroke-width="2" fill-rule="nonzero"></path>
+        <g id="Group" transform="translate(12.000000, 12.000000)" fill-rule="nonzero">
+            <circle id="Oval" fill="#0299FF" cx="6" cy="6" r="6"></circle>
+            <line x1="3.5" y1="6.5" x2="5.5" y2="8.5" id="Line" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round"></line>
+            <line x1="8.5" y1="3.5" x2="5.5" y2="8.5" id="Line" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round"></line>
+        </g>
+    </g>
+</svg>

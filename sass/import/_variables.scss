@@ -1,0 +1,198 @@
+//
+// Variables
+// --------------------------------------------------
+
+
+// Color system
+// White
+$color-WH:                     #FFF !default;
+
+// Orange/OR
+$color-OR50:                   #FFF7E1 !default;
+$color-OR100:                  #FFEBB1 !default;
+$color-OR200:                  #FFDC7E !default;
+$color-OR300:                  #FFD04A !default;
+$color-OR400:                  #FFC420 !default;
+$color-OR500:                  #FFBA00 !default;
+$color-OR600:                  #FFAC00 !default;
+$color-OR700:                  #F90 !default; //Secondary
+$color-OR800:                  #FF8700 !default;
+$color-OR900:                  #F60 !default; //Primary
+
+
+// Navy/NA
+$color-NA50:                   #F4FDFF !default;
+$color-NA100:                  #E5F4FC !default;
+$color-NA200:                  #D2E5F1 !default;
+$color-NA300:                  #C0D3DF !default;
+$color-NA400:                  #9BAFB9 !default;
+$color-NA500:                  #7B8D98 !default;
+$color-NA600:                  #556570 !default;
+$color-NA700:                  #42525C !default;
+$color-NA800:                  #23343E !default;
+$color-NA900:                  #00151D !default; //Primary
+
+// Gray/GR
+$color-GR50:                   #F7F7F7 !default;
+$color-GR100:                  #EEE !default;
+$color-GR200:                  #E1E1E1 !default;
+$color-GR300:                  #CFCFCF !default;
+$color-GR400:                  #AAA !default;
+$color-GR500:                  #898989 !default;
+$color-GR600:                  #707070 !default;
+$color-GR700:                  #4F4F4F !default;
+$color-GR800:                  #313131 !default;
+$color-GR900:                  #111 !default;
+
+// Red/RED
+$color-RED50:                  #FFE9EC !default;
+$color-RED100:                 #FFC8CD !default;
+$color-RED200:                 #F89090 !default;
+$color-RED300:                 #F06266 !default;
+$color-RED400:                 #FA333C !default;
+$color-RED500:                 #FF0119 !default;
+$color-RED600:                 #F0001B !default;
+$color-RED700:                 #DF0017 !default;
+$color-RED800:                 #D2010C !default; //Primary
+$color-RED900:                 #C50201 !default;
+
+// Blue/BL
+$color-BL50:                   #E3F3FE !default;
+$color-BL100:                  #BBDFFF !default;
+$color-BL200:                  #8ECCFF !default;
+$color-BL300:                  #5FB8FF !default;
+$color-BL400:                  #38A8FF !default;
+$color-BL500:                  #0299FF !default; //Primary
+$color-BL600:                  #078BF1 !default;
+$color-BL700:                  #0579DD !default;
+$color-BL800:                  #0167CB !default;
+$color-BL900:                  #0248AC !default;
+
+// Color setting
+$color-primary:                $color-OR900 !default;
+$color-primary2:               $color-OR700 !default;
+$color-secondary:              $color-NA900 !default;
+$color-warning:                $color-RED800 !default;
+$color-info:                   $color-BL500 !default;
+
+
+// Background
+$bg-defualt:                   $color-WH !default;
+$bg-gray:                      $color-GR50 !default;
+$bg-dark:                      $color-NA900 !default;
+
+
+// Scaffolding
+$body-bg:                      $bg-defualt !default;
+$text-color:                   $color-GR900 !default;
+$link-color:                   $color-primary !default;
+$link-hover-color:             $color-primary2 !default;
+$link-hover-decoration:        none !default;
+
+
+//== Typography
+$font-family-sans:            'Noto Sans TC', "微軟正黑體", "繁黑體", "Microsoft JhengHei", 'Lato', Arial, "Segoe UI Emoji", "Segoe UI Symbol", "新細明體", sans-serif !default;
+$font-family-serif:           'Noto Serif TC', serif !default;
+$font-family-LOAT:            'Lato', sans-serif, !default;
+$font-family-base:            $font-family-serif !default;
+
+$font-size-12:                0.75rem !default;
+$font-size-12:                0.8125rem !default;
+$font-size-14:                0.875rem !default;
+$font-size-base:              1rem !default;
+$font-size-18:                1.125rem !default;
+$font-size-22:                1.375rem !default;
+$font-size-24:                1.5rem !default;
+$font-size-30:                1.875rem !default;
+$font-size-32:                2rem !default;
+$font-size-40:                2.5rem !default;
+$font-size-50:                3.125rem !default;
+$font-size-60:                3.75rem !default;
+$font-size-72:                4.5rem !default;
+
+$font-size-h1:                $font-size-40;
+$font-size-h2:                $font-size-32;
+$font-size-h3:                $font-size-30;
+$font-size-h4:                $font-size-24;
+$font-size-h5:                $font-size-22;
+$font-size-h6:                $font-size-18;
+$display1-size:               $font-size-72;
+$display2-size:               $font-size-60;
+$display3-size:               $font-size-50;
+
+$font-weight-lighter:         lighter !default;
+$font-weight-light:           300 !default;
+$font-weight-normal:          400 !default;
+$font-weight-medium:          500 !default;
+$font-weight-semibold:        600 !default;
+$font-weight-bold:            700 !default;
+$font-weight-bolder:          bolder !default;
+
+$line-height-base:            1.5 !default;
+
+
+// Letter-spacing
+$letter-spacing-default:      0 !default;
+$letter-spacing-little:       1px !default;
+$letter-spacing-loose:        4px !default;
+
+
+//** By default, this inherits from the `<body>`.
+$headings-font-family:        $font-family-sans !default;
+$headings-font-weight:        $font-weight-bold !default;
+$headings-line-height:        1.475 !default;
+$headings-color:              inherit !default;
+
+
+// Animation
+$transition-base:             .3s !default;
+$transition-slow:             .8s !default;
+
+
+// Spacing
+$spacing-tiny:                4px !default;
+$spacing:                     8px !default;
+
+
+// Divider
+$divider-light:               $color-GR200;
+$divider-dark:                $color-NA700;
+
+
+//== Media queries breakpoints
+//
+// Extra small screen / phone
+$screen-xs:                  480px !default;
+$screen-xs-min:              $screen-xs !default;
+$screen-phone:               $screen-xs-min !default;
+// Small screen / tablet
+$screen-sm:                  769px !default;
+$screen-sm-min:              $screen-sm !default;
+$screen-tablet:              $screen-sm-min !default;
+// Medium screen / desktop
+$screen-md:                  992px !default;
+$screen-md-min:              $screen-md !default;
+$screen-desktop:             $screen-md-min !default;
+// Large screen / wide desktop
+$screen-lg:                  1200px !default;
+$screen-lg-min:              $screen-lg !default;
+$screen-lg-desktop:          $screen-lg-min !default;
+
+
+//== Grid system
+//** Padding between columns. Gets divided in half for the left and right.
+$grid-gutter-width:           36px !default;
+
+//== Container sizes
+// Small screen / tablet
+$container-tablet:             (714px + $grid-gutter-width) !default; //750
+//** For `$screen-sm-min` and up.
+$container-sm:                 $container-tablet !default;
+// Medium screen / desktop
+$container-desktop:            (934px + $grid-gutter-width) !default; //970
+//** For `$screen-md-min` and up.
+$container-md:                 $container-desktop !default;
+// Large screen / wide desktop
+$container-large-desktop:      (1164px + $grid-gutter-width) !default; //1200
+//** For `$screen-lg-min` and up.
+$container-lg:                 $container-large-desktop !default;

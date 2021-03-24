@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="493px" height="380px" viewBox="0 0 493 380" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+    <title>Mask</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="1069.35547 0 1366 0 1366 380 873 380"></polygon>
+    </defs>
+    <g id="1_首頁" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="1-1_首頁" transform="translate(-873.000000, -4315.000000)">
+            <g id="最新季刊-orange" transform="translate(0.000000, 4315.000000)">
+                <g id="BG">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <use id="Mask" fill="#FF6600" fill-rule="nonzero" xlink:href="#path-1"></use>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
