@@ -1023,6 +1023,25 @@
 			</form>
 		</div>
 	</div>
+	<div class="message message-newsletter" id="message-validation">
+		<div class="message-container">
+			<div class="message-title">就快完成了</div>
+			<div class="message-preface"><span>請查閱信箱，</span><span>我們將會發送訂閱確認信給您。</span><span>請點擊信中驗證連結以完成訂閱。</span></div>
+			<button class="btn btn--primary newsletter-close">好</button>
+		</div>
+	</div>
+	<div class="message message-newsletter" id="message-success">
+		<div class="message-container">
+			<div class="message-title">訂閱成功！</div>
+			<button class="btn btn--primary newsletter-close">我知道了</button>
+		</div>
+	</div>
+	<div class="message message-newsletter" id="message-warning">
+		<div class="message-container">
+			<div class="message-title">您已成功取消訂閱電子報</div>
+			<button class="btn btn--primary newsletter-close">我知道了</button>
+		</div>
+	</div>
 	<div class="loader"></div>
 	<div class="black"></div>
 	<!-- js -->
@@ -1045,9 +1064,6 @@
 				$(".main-header").stop().addClass("main-header--big");
 				return false;
 			}
-		});
-		$('button.icon-epaper').on('click', function(){
-			$('.message-newsletter').show();
 		});
 		// SLIDER - KV
 		$('.index-slide__data').slick({
@@ -1188,21 +1204,38 @@
 				var mail = /([A-Z0-9a-z_-][^@])+?@[^$#<>?]+?\.[\w]{2,4}/.test($(this).siblings('input').val()),
 					privacy = $(this).siblings('label').children('input').is(":checked");
 				if(!mail) {
-				$(this).siblings('input').addClass('error-status');
-				$(this).siblings('.help').addClass('help--error').show();
-				return false;
-				} else {
-				$(this).siblings('input').removeClass('error-status');
-				$(this).siblings('.help').removeClass('help--error').hide();
-				if (privacy) {
-					$('.loader').fadeIn();
-					$('#message-newsletter').addClass('message-loading');
+					$(this).siblings('input').addClass('error-status');
+					$(this).siblings('.help').addClass('help--error').show();
 					return false;
 				} else {
-					return false;
-				}
+					$(this).siblings('input').removeClass('error-status');
+					$(this).siblings('.help').removeClass('help--error').hide();
+					if (privacy) {
+						$('.loader').fadeIn();
+						$('#message-newsletter').addClass('message-loading');
+						setTimeout(function(){
+							$('#message-newsletter').removeClass('message-loading');
+							$('#message-newsletter, .loader').hide();
+							$('#message-validation').fadeIn();
+						}, 1000);
+						return false;
+					} else {
+						return false;
+					}
 				}
 			});
+			$('.newsletter-close').each(function() {
+				$(this).on('click', function() {
+					$(this).parent().parent().fadeOut();
+					$('.black').fadeOut();
+				});
+			});
+			if ( window.location.href.indexOf('success') > 0 ) {
+				$('#message-success, .black').fadeIn();
+			}
+			if ( window.location.href.indexOf('warning') > 0 ) {
+				$('#message-warning, .black').fadeIn();
+			}
 		})(jQuery);
 	</script>
 </body>

@@ -1,24 +1,24 @@
 .message {
     display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: calc(100% - #{$spacing * 4});
+    max-width: 600px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: $spacing * 3;
+    padding-right: $spacing * 3;
+    background-color: $color-WH;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    z-index: 10000001;
+    @media screen and (min-width: 768px) {
+        padding-left: 100px;
+        padding-right: 100px;
+    }
     &-newsletter {
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        width: calc(100% - #{$spacing * 4});
-        max-width: 600px;
-        padding-top: 50px;
-        padding-bottom: 50px;
-        padding-left: $spacing * 3;
-        padding-right: $spacing * 3;
-        background-color: $color-WH;
-        -webkit-transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-        transform: translate(-50%, -50%);
-        z-index: 10000001;
-        @media screen and (min-width: 768px) {
-            padding-left: 100px;
-            padding-right: 100px;
-        }
         &.message-loading::after {
             content: '';
             display: block;
@@ -68,6 +68,16 @@
                 display: inline-block;
             }
         }
+        button {
+            display: table;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 30px;
+            min-width: 150px;
+            &:focus, &:hover, &:active {
+                outline: 0 !important;
+            }
+        }
         form {
             > input[type*="email"] {
                 display: block;
@@ -104,12 +114,6 @@
                 a {
                     text-decoration: underline;
                 }
-            }
-            > button {
-                display: table;
-                margin-left: auto;
-                margin-right: auto;
-                margin-top: 30px;
             }
         }
     }

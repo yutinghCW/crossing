@@ -191,7 +191,7 @@
 						<a href="https://www.instagram.com/crossing.tw/" target="_blank" class="icon-instagram"></a>
 						<a href="line://ti/p/@lrw6726p" target="_blank" class="icon-line"></a>
 						<a href="https://crossing.cw.com.tw/rss" target="_blank" class="icon-rss"></a>
-						<a href="https://www.cw.com.tw/member/newsletters" target="_blank" class="icon-epaper" data-tooltip="訂閱電子報"></a>
+						<button class="icon-epaper" data-tooltip="訂閱電子報"></button>
 					</div>
 
 					<div class="tool-about">
@@ -1254,7 +1254,7 @@
 						<a href="https://www.instagram.com/crossing.tw/" target="_blank" class="icon-instagram"></a>
 						<a href="line://ti/p/@lrw6726p" target="_blank" class="icon-line"></a>
 						<a href="https://crossing.cw.com.tw/rss" target="_blank" class="icon-rss"></a>
-						<a href="https://www.cw.com.tw/member/newsletters" target="_blank" class="icon-epaper" data-tooltip="訂閱電子報"></a>
+						<button class="icon-epaper" data-tooltip="訂閱電子報"></button>
 					</div>
 
 					<div class="footer-nav">
@@ -1276,19 +1276,54 @@
 		<!-- goTop -->
 		<a href="" class="goTop icon-goTop scroll"></a>
 	</div>
-  
-  <!--notification-->
-  <div class="notification fix--bottom cookies" style="display:none;">
-    <div class="notification__body">
-      為提供您更多優質的內容，本網站使用cookies分析技術。若繼續閱覽本網站內容，即表示您同意我們使用 cookies，關於更多cookies資訊請閱讀我們的隱私權政策與使用條款。
-    </div>
+	<div class="message message-newsletter" id="message-newsletter">
+		<i class="icon-close"></i>
+		<div class="message-container">
+			<div class="message-title">OOPS !</div>
+			<div class="message-preface"><span>似乎發生了小錯誤，</span><span>請再輸入一次您的信箱</span></div>
+			<form>
+				<input type="email" name="newsletter" class="text-input" id="newsletter-input" placeholder="請輸入 e-mail">
+				<div class="help">您填寫的 e-mail 格式有誤</div>
+				<label>
+					<input type="checkbox" name="privacy" id="newsletter-privacy">
+					<span>我已詳細閱讀並同意天下雜誌集團的<a href="https://www.cw.com.tw/privacy" target="_blank" rel="noopener noreferrer">隱私權政策與使用條款</a></span>
+				</label>
+				<button class="btn btn--disable" type="submit" id="newsletter-submit">立即訂閱<i class="icon-btn-arrow light"></i></button>
+			</form>
+		</div>
+	</div>
+	<div class="message message-newsletter" id="message-validation">
+		<div class="message-container">
+			<div class="message-title">就快完成了</div>
+			<div class="message-preface"><span>請查閱信箱，</span><span>我們將會發送訂閱確認信給您。</span><span>請點擊信中驗證連結以完成訂閱。</span></div>
+			<button class="btn btn--primary newsletter-close">好</button>
+		</div>
+	</div>
+	<div class="message message-newsletter" id="message-success">
+		<div class="message-container">
+			<div class="message-title">訂閱成功！</div>
+			<button class="btn btn--primary newsletter-close">我知道了</button>
+		</div>
+	</div>
+	<div class="message message-newsletter" id="message-warning">
+		<div class="message-container">
+			<div class="message-title">您已成功取消訂閱電子報</div>
+			<button class="btn btn--primary newsletter-close">我知道了</button>
+		</div>
+	</div>
+	<div class="loader"></div>
+	<div class="black"></div>
+	<!--notification-->
+	<div class="notification fix--bottom cookies" style="display:none;">
+		<div class="notification__body">
+		為提供您更多優質的內容，本網站使用cookies分析技術。若繼續閱覽本網站內容，即表示您同意我們使用 cookies，關於更多cookies資訊請閱讀我們的隱私權政策與使用條款。
+		</div>
 
-    <div class="notification__btns">
-      <a id="btn--cookie" class="btn btn--info">我知道了</a>
-    </div>
-  </div>
-  <!--notification END-->
-
+		<div class="notification__btns">
+		<a id="btn--cookie" class="btn btn--info">我知道了</a>
+		</div>
+	</div>
+	<!--notification END-->
 	<!-- js -->
 	<script src="js/jquery.min.js"></script>
 	<script src="js/supportCheck.js"></script>
@@ -1352,7 +1387,6 @@
 			});
 		}
 	</script>
-
 	<script>
 		// 0923_Ads 依載具remove重複廣告版位
   	var allDESKTOP = window.matchMedia('(min-width: 769px)');
@@ -1364,6 +1398,62 @@
 		if (allMOBILE.matches) {
 			$('.article-box__side .R1,.article-box__side .R2,.article-box__side .R3,.article-box__side .R4,.article-box__side .R5').remove();
 		}
+	</script>
+	<script>
+		(function($) {
+			$('.icon-epaper').each(function(){
+				$(this).on('click', function () {
+					$('#message-newsletter, .black').fadeIn();
+				});
+			});
+			$('#message-newsletter .icon-close').on('click', function () {
+				$(this).parent().fadeOut();
+				$('.black').fadeOut();
+			});
+			$('#newsletter-input, #newsletter-privacy').on('change keyup copy paste cut', function() {
+				if ( $('#newsletter-privacy').is(":checked") && $('#newsletter-input').val() != '' ) {
+				$('#newsletter-submit').removeClass('btn--disable').addClass('btn--primary');
+				} else {
+				$('#newsletter-submit').removeClass('btn--primary').addClass('btn--disable');
+				}
+			});
+			$('#newsletter-submit').on('click', function() {
+				var mail = /([A-Z0-9a-z_-][^@])+?@[^$#<>?]+?\.[\w]{2,4}/.test($(this).siblings('input').val()),
+					privacy = $(this).siblings('label').children('input').is(":checked");
+				if(!mail) {
+					$(this).siblings('input').addClass('error-status');
+					$(this).siblings('.help').addClass('help--error').show();
+					return false;
+				} else {
+					$(this).siblings('input').removeClass('error-status');
+					$(this).siblings('.help').removeClass('help--error').hide();
+					if (privacy) {
+						$('.loader').fadeIn();
+						$('#message-newsletter').addClass('message-loading');
+						setTimeout(function(){
+							$('#message-newsletter').removeClass('message-loading');
+							$('#message-newsletter, .loader').hide();
+							$('#message-validation').fadeIn();
+						}, 1000);
+						return false;
+					} else {
+						return false;
+					}
+				}
+			});
+			$('.newsletter-close').each(function() {
+				$(this).on('click', function() {
+					$(this).parent().parent().fadeOut();
+					$('.black').fadeOut();
+				});
+			});
+			if ( window.location.href.indexOf('success') > 0 ) {
+				$('#message-success, .black').fadeIn();
+			}
+			if ( window.location.href.indexOf('warning') > 0 ) {
+				$('#message-warning, .black').fadeIn();
+			}
+		})(jQuery);
 	</script>
 </body>
 </html>

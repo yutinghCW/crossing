@@ -685,15 +685,16 @@ ul ul, ul ol, ol ul, ol ol { margin-bottom: 0; }
     .article-titlebar .category::before { white-space: nowrap; }
     .card__body .info__article { white-space: nowrap; }
     .card--fluid .card__body .info__author { white-space: nowrap; } } }
-.message { display: none; }
-.message-newsletter { position: fixed; top: 50%; left: 50%; width: calc(100% - 32px); max-width: 600px; padding-top: 50px; padding-bottom: 50px; padding-left: 24px; padding-right: 24px; background-color: #FFF; -webkit-transform: translate(-50%, -50%); -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%); z-index: 10000001; }
-@media screen and (min-width: 768px) { .message-newsletter { padding-left: 100px; padding-right: 100px; } }
+.message { display: none; position: fixed; top: 50%; left: 50%; width: calc(100% - 32px); max-width: 600px; padding-top: 50px; padding-bottom: 50px; padding-left: 24px; padding-right: 24px; background-color: #FFF; -webkit-transform: translate(-50%, -50%); -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%); z-index: 10000001; }
+@media screen and (min-width: 768px) { .message { padding-left: 100px; padding-right: 100px; } }
 .message-newsletter.message-loading::after { content: ''; display: block; position: absolute; top: 0; bottom: 0; left: 0; right: 0; background-color: #00151D; opacity: 0.5; z-index: 1; }
 .message-newsletter .icon-close { position: absolute; top: 16px; right: 16px; width: 40px; height: 40px; padding: 8px; color: #00151D; font-size: 1.5rem; line-height: 0; background-color: #FFF; cursor: pointer; -webkit-transition: color 0.3s, background-color 0.3s; -o-transition: color 0.3s, background-color 0.3s; transition: color 0.3s, background-color 0.3s; }
 .message-newsletter .icon-close:hover { color: #FFF; background-color: #F60; }
 .message-newsletter .message-title { font-size: 1.5rem; font-weight: 700; line-height: 1.475; text-align: center; }
 .message-newsletter .message-preface { padding-top: 4px; margin-bottom: 32px; font-size: 1.125rem; font-family: "Noto Sans TC", "微軟正黑體", "繁黑體", "Microsoft JhengHei", "Lato", Arial, "Segoe UI Emoji", "Segoe UI Symbol", "新細明體", sans-serif; font-weight: 300; text-align: center; }
 .message-newsletter .message-preface span { display: inline-block; }
+.message-newsletter button { display: table; margin-left: auto; margin-right: auto; margin-top: 30px; min-width: 150px; }
+.message-newsletter button:focus, .message-newsletter button:hover, .message-newsletter button:active { outline: 0 !important; }
 .message-newsletter form > input[type*="email"] { display: block; width: 100%; height: 50px; border: 1px solid #E1E1E1; }
 .message-newsletter form > input[type*="email"]:focus { border-color: #9BAFB9; }
 .message-newsletter form > input[type*="email"].error-status { border-color: #D2010C; }
@@ -702,7 +703,6 @@ ul ul, ul ol, ol ul, ol ol { margin-bottom: 0; }
 .message-newsletter form > label { display: grid; grid-template-columns: auto auto; align-items: baseline; padding-top: 8px; }
 .message-newsletter form > label span { display: block; padding-left: 8px; }
 .message-newsletter form > label a { text-decoration: underline; }
-.message-newsletter form > button { display: table; margin-left: auto; margin-right: auto; margin-top: 30px; }
 
 .black { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: #00151D; opacity: 0.5; z-index: 10000000; }
 
