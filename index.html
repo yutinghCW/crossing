@@ -1007,17 +1007,23 @@
 		<!-- goTop -->
 		<a href="" class="goTop icon-goTop scroll"></a>
 	</div>
-	<div class="message-newsletter">
+	<div class="message message-newsletter" id="message-newsletter">
 		<i class="icon-close"></i>
 		<div class="message-container">
 			<div class="message-title">換日線全球事件簿</div>
-			<div class="message-preface">每週一封獨家神秘郵件，讓換日線帶你飛</div>
-			<form action="#!" method="post">
-				<input type="email" name="newsletter" class="text-input" id="newsletter" placeholder="請輸入 e-mail">
-				<button class="btn btn--disable" type="submit">立即訂閱<i class="icon-btn-arrow light"></i></button>
+			<div class="message-preface"><span>每週一封獨家神秘郵件，</span><span>讓換日線帶你飛</span></div>
+			<form>
+				<input type="email" name="newsletter" class="text-input" id="newsletter-input" placeholder="請輸入 e-mail">
+				<div class="help">您填寫的 e-mail 格式有誤</div>
+				<label>
+					<input type="checkbox" name="privacy" id="newsletter-privacy">
+					<span>我已詳細閱讀並同意天下雜誌集團的<a href="https://www.cw.com.tw/privacy" target="_blank" rel="noopener noreferrer">隱私權政策與使用條款</a></span>
+				</label>
+				<button class="btn btn--disable" type="submit" id="newsletter-submit">立即訂閱<i class="icon-btn-arrow light"></i></button>
 			</form>
 		</div>
 	</div>
+	<div class="loader"></div>
 	<div class="black"></div>
 	<!-- js -->
 	<script src="js/jquery.min.js"></script>
@@ -1159,6 +1165,45 @@
 		if (allMOBILE.matches) {
 			$('.leaderboard.pc,.R1.pc,.R2.pc,.R3.pc,.footerboard.pc,.R4.pc,.R5.pc').remove();
 		}
+	</script>
+	<script>
+		(function($) {
+			$('.icon-epaper').each(function(){
+				$(this).on('click', function () {
+					$('#message-newsletter, .black').fadeIn();
+				});
+			});
+			$('#message-newsletter .icon-close').on('click', function () {
+				$(this).parent().fadeOut();
+				$('.black').fadeOut();
+			});
+			$('#newsletter-privacy').on('change click keyup', function() {
+				if ( $(this).is(":checked") && $('#newsletter-input').val() != '' ) {
+				$('#newsletter-submit').removeClass('btn--disable').addClass('btn--primary');
+				} else {
+				$('#newsletter-submit').removeClass('btn--primary').addClass('btn--disable');
+				}
+			});
+			$('#newsletter-submit').on('click', function() {
+				var mail = /([A-Z0-9a-z_-][^@])+?@[^$#<>?]+?\.[\w]{2,4}/.test($(this).siblings('input').val()),
+					privacy = $(this).siblings('label').children('input').is(":checked");
+				if(!mail) {
+				$(this).siblings('input').addClass('error-status');
+				$(this).siblings('.help').addClass('help--error').show();
+				return false;
+				} else {
+				$(this).siblings('input').removeClass('error-status');
+				$(this).siblings('.help').removeClass('help--error').hide();
+				if (privacy) {
+					$('.loader').fadeIn();
+					$('#message-newsletter').addClass('message-loading');
+					return false;
+				} else {
+					return false;
+				}
+				}
+			});
+		})(jQuery);
 	</script>
 </body>
 </html>

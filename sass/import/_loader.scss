@@ -1,0 +1,52 @@
+$dot-width: $spacing * 2 !default;
+$dot-height: $spacing * 2 !default;
+$dot-radius: $spacing !default;
+
+$dot-spacing: $spacing * 3 !default;
+
+@mixin dot($width: $dot-width, $height: $dot-height, $radius: $dot-radius, $bg-color: $color-OR900, $color: $color-OR900) {
+    width: $width;
+    height: $height;
+    color: $color;
+    border-radius: $radius;
+    background-color: $bg-color;
+}
+
+.loader {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+	@include dot;
+	animation: loader 1s infinite linear alternate;
+	animation-delay: .5s;
+    transform: translate(-50%, -50%);
+    z-index: 10000002;
+	&::before,
+	&::after {
+		content: '';
+		display: inline-block;
+		position: absolute;
+		top: 0;
+	}
+	&::before {
+		left: -$dot-spacing;
+		@include dot($bg-color: $color-OR900);
+		animation: loader 1s infinite alternate;
+		animation-delay: 0s;
+	}
+	&::after {
+		left: $dot-spacing;
+		@include dot($bg-color: $color-OR900);
+		animation: loader 1s infinite alternate;
+		animation-delay: 1s;
+	}
+}
+@keyframes loader {
+	0% {
+        background-color: $color-OR900;
+	}
+	50%, 100% {
+        background-color: $color-OR400;
+	}
+}
