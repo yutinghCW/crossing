@@ -1307,6 +1307,13 @@
 	</div>
 	<div class="message message-newsletter" id="message-warning">
 		<div class="message-container">
+			<div class="message-title">OOPS !</div>
+			<div class="message-preface"><span>似乎發生了小錯誤</span><span><span>請再點擊一次電子報上的</span><span>「取消訂閱」按鈕</span></span></div>
+			<button class="btn btn--primary newsletter-close">我知道了</button>
+		</div>
+	</div>
+	<div class="message message-newsletter" id="message-cancel">
+		<div class="message-container">
 			<div class="message-title">您已成功取消訂閱電子報</div>
 			<button class="btn btn--primary newsletter-close">我知道了</button>
 		</div>
@@ -1452,6 +1459,9 @@
 			}
 			if ( window.location.href.indexOf('warning') > 0 ) {
 				$('#message-warning, .black').show();
+			}
+			if ( window.location.href.indexOf('cancel') > 0 ) {
+				$('#message-cancel, .black').show();
 			}
 		})(jQuery);
 	</script>
