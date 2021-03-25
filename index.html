@@ -1177,8 +1177,8 @@
 				$(this).parent().fadeOut();
 				$('.black').fadeOut();
 			});
-			$('#newsletter-privacy').on('change click keyup', function() {
-				if ( $(this).is(":checked") && $('#newsletter-input').val() != '' ) {
+			$('#newsletter-input, #newsletter-privacy').on('change keyup copy paste cut', function() {
+				if ( $('#newsletter-privacy').is(":checked") && $('#newsletter-input').val() != '' ) {
 				$('#newsletter-submit').removeClass('btn--disable').addClass('btn--primary');
 				} else {
 				$('#newsletter-submit').removeClass('btn--primary').addClass('btn--disable');
