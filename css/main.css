@@ -695,12 +695,12 @@ ul ul, ul ol, ol ul, ol ol { margin-bottom: 0; }
 .message-newsletter .message-preface span { display: inline-block; }
 .message-newsletter button { display: table; margin-left: auto; margin-right: auto; margin-top: 30px; min-width: 150px; }
 .message-newsletter button:focus, .message-newsletter button:hover, .message-newsletter button:active { outline: 0 !important; }
-.message-newsletter form > input[type*="email"] { display: block; width: 100%; height: 50px; border: 1px solid #E1E1E1; }
+.message-newsletter form > input[type*="email"] { display: block; width: 100%; height: 50px; border: 1px solid #E1E1E1; -webkit-appearance: none; border-radius: 0; }
 .message-newsletter form > input[type*="email"]:focus { border-color: #9BAFB9; }
 .message-newsletter form > input[type*="email"].error-status { border-color: #D2010C; }
 .message-newsletter form > div.help { display: none; padding-top: 4px; padding-bottom: 4px; color: #AAA; font-family: "Noto Sans TC", "微軟正黑體", "繁黑體", "Microsoft JhengHei", "Lato", Arial, "Segoe UI Emoji", "Segoe UI Symbol", "新細明體", sans-serif; font-size: 0.875rem; }
 .message-newsletter form > div.help.help--error { color: #D2010C; }
-.message-newsletter form > label { display: grid; grid-template-columns: auto auto auto; align-items: baseline; padding-top: 8px; }
+.message-newsletter form > label { display: grid; grid-template-columns: auto auto auto; align-items: baseline; padding-top: 8px; font-family: "Noto Sans TC", "微軟正黑體", "繁黑體", "Microsoft JhengHei", "Lato", Arial, "Segoe UI Emoji", "Segoe UI Symbol", "新細明體", sans-serif; }
 .message-newsletter form > label span { display: block; padding-left: 8px; }
 .message-newsletter form > label a { text-decoration: underline; }
 
