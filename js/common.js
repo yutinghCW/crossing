@@ -39,7 +39,63 @@
     });
   }
 
-  
+  // 訪客訂閱電子報 -----
+  // 展開 Lightbox
+  $('.icon-epaper').each(function(){
+    $(this).on('click', function () {
+      $('#message-newsletter, .black').fadeIn();
+    });
+  });
+
+  // 用 close(X) 關閉 Lightbox
+  $('#message-newsletter .icon-close').on('click', function () {
+    $(this).parent().fadeOut();
+    $('.black').fadeOut();
+  });
+
+  // 判斷 button 是否 disabled
+  $('#newsletter-input, #newsletter-privacy').on('change keyup copy paste cut', function() {
+    if ( $('#newsletter-privacy').is(":checked") && $('#newsletter-input').val() != '' ) {
+      $('#newsletter-submit').removeClass('btn--disable').addClass('btn--primary').prop("disabled", false);
+    } else {
+      $('#newsletter-submit').removeClass('btn--primary').addClass('btn--disable').prop("disabled", true);
+    }
+  });
+
+  // 判斷 mail 格式及隱私權後，是否繼續 form
+  $('#newsletter-submit').on('click', function() {
+    var mail = /([A-Z0-9a-z_-][^@])+?@[^$#<>?]+?\.[\w]{2,4}/.test($(this).siblings('input').val()),
+      privacy = $(this).siblings('label').children('input').is(":checked");
+    if(!mail) {
+      $(this).siblings('input').addClass('error-status');
+      $(this).siblings('.help').addClass('help--error').show();
+      return false;
+    } else {
+      $(this).siblings('input').removeClass('error-status');
+      $(this).siblings('.help').removeClass('help--error').hide();
+      if (privacy) {
+        $('.loader').fadeIn();
+        $('#message-newsletter').addClass('message-loading');
+        setTimeout(function(){
+          $('#message-newsletter').removeClass('message-loading');
+          $('#message-newsletter, .loader').hide();
+          $('#message-validation').fadeIn();
+        }, 1000);
+        return false; // 靜態用
+        // return true; // 進正式機打開
+      } else {
+        return false;
+      }
+    }
+  });
+
+  // 用 button 關閉 Lightbox
+  $('.newsletter-close').each(function() {
+    $(this).on('click', function() {
+      $(this).parent().parent().fadeOut();
+      $('.black').fadeOut();
+    });
+  });
 
   // Do IE stuff 超過行數文字變... -----
   if (window.document.documentMode) {
