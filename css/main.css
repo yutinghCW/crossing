@@ -687,27 +687,28 @@ ul ul, ul ol, ol ul, ol ol { margin-bottom: 0; }
     .card--fluid .card__body .info__author { white-space: nowrap; } } }
 .message { display: none; position: fixed; top: 50%; left: 50%; width: calc(100% - 32px); max-width: 600px; padding-top: 50px; padding-bottom: 50px; padding-left: 24px; padding-right: 24px; background-color: #FFF; -webkit-transform: translate(-50%, -50%); -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%); z-index: 10000001; }
 @media screen and (min-width: 768px) { .message { padding-left: 100px; padding-right: 100px; } }
+.message-newsletter { text-align: center; }
 .message-newsletter.message-loading::after { content: ''; display: block; position: absolute; top: 0; bottom: 0; left: 0; right: 0; background-color: #00151D; opacity: 0.5; z-index: 1; }
 .message-newsletter .icon-close { position: absolute; top: 16px; right: 16px; width: 40px; height: 40px; padding: 8px; color: #00151D; font-size: 1.5rem; line-height: 0; background-color: #FFF; cursor: pointer; -webkit-transition: color 0.3s, background-color 0.3s; -o-transition: color 0.3s, background-color 0.3s; transition: color 0.3s, background-color 0.3s; }
 .message-newsletter .icon-close:hover { color: #FFF; background-color: #F60; }
-.message-newsletter .message-title { font-size: 1.5rem; font-weight: 700; line-height: 1.475; text-align: center; }
-.message-newsletter .message-preface { padding-top: 4px; margin-bottom: 32px; font-size: 1.125rem; font-family: "Noto Sans TC", "微軟正黑體", "繁黑體", "Microsoft JhengHei", "Lato", Arial, "Segoe UI Emoji", "Segoe UI Symbol", "新細明體", sans-serif; font-weight: 300; text-align: center; }
+.message-newsletter .message-title { font-size: 1.5rem; font-weight: 700; line-height: 1.475; }
+.message-newsletter .message-preface { padding-top: 4px; margin-bottom: 32px; font-size: 1.125rem; font-family: "Noto Sans TC", "微軟正黑體", "繁黑體", "Microsoft JhengHei", "Lato", Arial, "Segoe UI Emoji", "Segoe UI Symbol", "新細明體", sans-serif; font-weight: 300; }
 .message-newsletter .message-preface span { display: inline-block; }
-.message-newsletter button { display: table; margin-left: auto; margin-right: auto; margin-top: 30px; min-width: 150px; }
+.message-newsletter button { margin-top: 30px; min-width: 150px; }
 .message-newsletter button:focus, .message-newsletter button:hover, .message-newsletter button:active { outline: 0 !important; }
-.message-newsletter form > input[type*="email"] { display: block; width: 100%; height: 50px; border: 1px solid #E1E1E1; -webkit-appearance: none; border-radius: 0; }
+.message-newsletter form > input[type*="email"] { display: block; width: 100%; height: 50px; text-align: left; border: 1px solid #E1E1E1; -webkit-appearance: none; border-radius: 0; }
 .message-newsletter form > input[type*="email"]:focus { border-color: #9BAFB9; }
 .message-newsletter form > input[type*="email"].error-status { border-color: #D2010C; }
-.message-newsletter form > div.help { display: none; padding-top: 4px; padding-bottom: 4px; color: #AAA; font-family: "Noto Sans TC", "微軟正黑體", "繁黑體", "Microsoft JhengHei", "Lato", Arial, "Segoe UI Emoji", "Segoe UI Symbol", "新細明體", sans-serif; font-size: 0.875rem; }
+.message-newsletter form > div.help { display: none; padding-top: 4px; padding-bottom: 4px; color: #AAA; font-family: "Noto Sans TC", "微軟正黑體", "繁黑體", "Microsoft JhengHei", "Lato", Arial, "Segoe UI Emoji", "Segoe UI Symbol", "新細明體", sans-serif; font-size: 0.875rem; text-align: left; }
 .message-newsletter form > div.help.help--error { color: #D2010C; }
-.message-newsletter form > label { display: grid; grid-template-columns: auto auto auto; align-items: baseline; padding-top: 8px; font-family: "Noto Sans TC", "微軟正黑體", "繁黑體", "Microsoft JhengHei", "Lato", Arial, "Segoe UI Emoji", "Segoe UI Symbol", "新細明體", sans-serif; }
+.message-newsletter form > label { padding-top: 8px; font-family: "Noto Sans TC", "微軟正黑體", "繁黑體", "Microsoft JhengHei", "Lato", Arial, "Segoe UI Emoji", "Segoe UI Symbol", "新細明體", sans-serif; text-align: left; }
 .message-newsletter form > label span { display: block; padding-left: 8px; }
 .message-newsletter form > label a { text-decoration: underline; }
 
-.label-check { display: block; position: relative; font-size: 0; cursor: pointer; z-index: 1; -moz-user-select: -moz-none; -ms-user-select: none; -webkit-user-select: none; user-select: none; }
+.label-check { display: block; position: relative; padding-left: 0.875rem; font-size: 0; cursor: pointer; z-index: 1; -moz-user-select: -moz-none; -ms-user-select: none; -webkit-user-select: none; user-select: none; }
 .label-check span { display: inline-block; vertical-align: top; line-height: 1.25; }
 .label-check span.check-text { font-size: 1rem; }
-.label-check span.check-mark { position: relative; top: calc((1.25rem - 20px) / 2); left: 0; width: 0.875rem; height: 0.875rem; background-color: transparent; border: 1px solid #00151D; border-radius: 2px; }
+.label-check span.check-mark { position: absolute; top: calc(((1.25rem - 0.875rem) / 2) + 8px); left: 0; padding: 0; width: 0.875rem; height: 0.875rem; background-color: transparent; border: 1px solid #00151D; border-radius: 2px; }
 .label-check span.check-mark::after { content: ''; position: absolute; display: none; top: 50%; left: 50%; width: 4px; height: 8px; border: solid #00151D; border-width: 0 1px 1px 0; transform-origin: 75% 50%; transform: translate(-50%, -50%) rotate(45deg); }
 .label-check input { position: absolute; width: 0; height: 0; overflow: hidden; opacity: 0; cursor: pointer; }
 .label-check input:checked ~ span.check-mark { border-color: #00151D; }

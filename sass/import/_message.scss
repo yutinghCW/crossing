@@ -19,6 +19,7 @@
         padding-right: 100px;
     }
     &-newsletter {
+        text-align: center;
         &.message-loading::after {
             content: '';
             display: block;
@@ -55,7 +56,6 @@
             font-size: $font-size-24;
             font-weight: $headings-font-weight;
             line-height: $headings-line-height;
-            text-align: center;
         }
         .message-preface {
             padding-top: $spacing-tiny;
@@ -63,15 +63,14 @@
             font-size: $font-size-18;
             font-family: $headings-font-family;
             font-weight: $font-weight-light;
-            text-align: center;
             span {
                 display: inline-block;
             }
         }
         button {
-            display: table;
-            margin-left: auto;
-            margin-right: auto;
+            // display: table;
+            // margin-left: auto;
+            // margin-right: auto;
             margin-top: 30px;
             min-width: 150px;
             &:focus, &:hover, &:active {
@@ -83,6 +82,7 @@
                 display: block;
                 width: 100%;
                 height: 50px;
+                text-align: left;
                 border: 1px solid $divider-light;
                 -webkit-appearance: none;
                 border-radius: 0;
@@ -100,16 +100,15 @@
                 color: $color-GR400;
                 font-family: $font-family-sans;
                 font-size: $font-size-14;
+                text-align: left;
                 &.help--error {
                     color: $color-warning;
                 }
             }
             > label {
-                display: grid;
-                grid-template-columns: auto auto auto;
-                align-items: baseline;
                 padding-top: $spacing;
                 font-family: $font-family-sans;
+                text-align: left;
                 span {
                     display: block;
                     padding-left: $spacing;
@@ -125,6 +124,7 @@
 .label-check {
 	display: block;
 	position: relative;
+    padding-left: $font-size-14;
 	font-size: 0;
 	cursor: pointer;
 	z-index: 1;
@@ -140,9 +140,10 @@
             font-size: $font-size-base;
 		}
 		&.check-mark {
-			position: relative;
-			top: calc((1.25rem - 20px) / 2);
+			position: absolute;
+			top: calc(((1.25rem - #{$font-size-14}) / 2) + #{$spacing});
 			left: 0;
+            padding: 0;
 			width: $font-size-14;
 			height: $font-size-14;
 			background-color: transparent;
